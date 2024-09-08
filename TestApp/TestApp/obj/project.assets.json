@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\TestApp\\TestApp\\TestApp.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\EABACharacterCreator\\TestApp\\TestApp\\TestApp.csproj",
       "projectName": "TestApp",
-      "projectPath": "C:\\Users\\Administrator\\source\\repos\\TestApp\\TestApp\\TestApp.csproj",
+      "projectPath": "C:\\Users\\Administrator\\EABACharacterCreator\\TestApp\\TestApp\\TestApp.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\source\\repos\\TestApp\\TestApp\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\EABACharacterCreator\\TestApp\\TestApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

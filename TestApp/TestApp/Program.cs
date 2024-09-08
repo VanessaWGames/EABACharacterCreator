@@ -110,7 +110,6 @@ namespace TestApp
                             Console.WriteLine(writeThis);
                             iteration = 0;
                         }
-
                     }
                     Console.WriteLine("+----------------------------------------------+");
                     iteration = 0;
@@ -217,11 +216,72 @@ namespace TestApp
                     }
                     else if (response == "6")
                     {
-
+                        if(currentCharacter.skills.Count == 0)
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("No Skills!");
+                            Console.WriteLine("");
+                        }
+                        else
+                        {
+                            Console.WriteLine("+----------------------------------------------+");
+                            iteration = 0;
+                            string finalResult = "";
+                            foreach (KeyValuePair<string, int> skill in currentCharacter.skills)
+                            {
+                                if (iteration == 0)
+                                {
+                                    Console.WriteLine("");
+                                    finalResult = "| " + skill.Key + ": " + skill.Value;
+                                    iteration++;
+                                }
+                                else if (iteration == 1)
+                                {
+                                    finalResult += " | " + skill.Key + ": " + skill.Value;
+                                    iteration++;
+                                }
+                                else
+                                {
+                                    finalResult += " | " + skill.Key + ": " + skill.Value;
+                                    Console.WriteLine(finalResult);
+                                    iteration = 0;
+                                }
+                            }
+                            Console.WriteLine("+----------------------------------------------+");
+                            Console.WriteLine("");
+                            Console.WriteLine("What skill to adjust?");
+                            Console.WriteLine("");
+                            string reponse = Console.ReadLine();
+                            if (reponse != null)
+                            {
+                                ChangeSkill(currentCharacter, reponse);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Skill doesn't exist!");
+                            }
+                        }
                     }
                     else if (response == "7")
                     {
-
+                        Console.WriteLine("");
+                        Console.WriteLine("What skill do you want to add?");
+                        Console.WriteLine("");
+                        string nameResponse = Console.ReadLine();
+                        if (nameResponse != null)
+                        {
+                            string skillName = nameResponse;
+                            Console.WriteLine("");
+                            Console.WriteLine("What level should it be?");
+                            Console.WriteLine("");
+                            string levelResponse = Console.ReadLine();
+                            int skillLevel = 0;
+                            if (levelResponse != null && int.TryParse(levelResponse, out skillLevel))
+                            {
+                                currentCharacter.skills.Add(skillName, skillLevel);
+                                Console.WriteLine("Skill " + skillName + " at level: " + currentCharacter.skills[skillName] + " successfully added!");
+                            }
+                        }
                     }
                     else
                     {
@@ -277,6 +337,39 @@ namespace TestApp
                 if (input != null && int.TryParse(input, out value))
                 {
                     character.subAttributes[name].value = value;
+                    Console.WriteLine(name + " changed to: " + value);
+                    Console.ReadKey();
+                }
+                else
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Incorrect value!");
+                    Console.WriteLine("");
+                    Console.ReadKey();
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Incorrect value!");
+                Console.WriteLine("");
+                Console.ReadKey();
+            }
+        }
+
+        public static void ChangeSkill(Character character, string name)
+        {
+            if (character.skills.ContainsKey(name))
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Input value:");
+                Console.WriteLine("");
+                string input = Console.ReadLine();
+                int value = 0;
+                if (input != null && int.TryParse(input, out value))
+                {
+                    character.skills[name] = value;
                     Console.WriteLine(name + " changed to: " + value);
                     Console.ReadKey();
                 }

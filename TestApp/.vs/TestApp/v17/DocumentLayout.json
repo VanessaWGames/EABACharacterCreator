@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrator\\source\\repos\\TestApp\\",
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\EABACharacterCreator\\TestApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F7500739-7DBD-49BB-A9C1-342532F6244D}|TestApp\\TestApp.csproj|c:\\users\\administrator\\source\\repos\\testapp\\testapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F7500739-7DBD-49BB-A9C1-342532F6244D}|TestApp\\TestApp.csproj|c:\\users\\administrator\\eabacharactercreator\\testapp\\testapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F7500739-7DBD-49BB-A9C1-342532F6244D}|TestApp\\TestApp.csproj|solutionrelative:testapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7500739-7DBD-49BB-A9C1-342532F6244D}|TestApp\\TestApp.csproj|c:\\users\\administrator\\source\\repos\\testapp\\testapp\\testapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{F7500739-7DBD-49BB-A9C1-342532F6244D}|TestApp\\TestApp.csproj|c:\\users\\administrator\\eabacharactercreator\\testapp\\testapp\\testapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{F7500739-7DBD-49BB-A9C1-342532F6244D}|TestApp\\TestApp.csproj|solutionrelative:testapp\\testapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
@@ -27,25 +27,24 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TestApp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\TestApp\\TestApp\\TestApp.csproj",
+              "Title": "TestApp.csproj",
+              "DocumentMoniker": "C:\\Users\\Administrator\\EABACharacterCreator\\TestApp\\TestApp\\TestApp.csproj",
               "RelativeDocumentMoniker": "TestApp\\TestApp.csproj",
-              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\TestApp\\TestApp\\TestApp.csproj",
+              "ToolTip": "C:\\Users\\Administrator\\EABACharacterCreator\\TestApp\\TestApp\\TestApp.csproj",
               "RelativeToolTip": "TestApp\\TestApp.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-08T01:02:54.529Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-08T01:02:54.529Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\TestApp\\TestApp\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\EABACharacterCreator\\TestApp\\TestApp\\Program.cs",
               "RelativeDocumentMoniker": "TestApp\\Program.cs",
-              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\TestApp\\TestApp\\Program.cs",
+              "ToolTip": "C:\\Users\\Administrator\\EABACharacterCreator\\TestApp\\TestApp\\Program.cs",
               "RelativeToolTip": "TestApp\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAaAAAA",
+              "ViewState": "AQIAAN0AAAAAAAAAAAAAAOgAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-06T18:15:22.423Z",
               "EditorCaption": ""
