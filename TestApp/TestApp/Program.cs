@@ -6,7 +6,7 @@ namespace TestApp
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.WriteLine("This is the EABA character creation project");
             string currentAction = "Menu";
@@ -53,6 +53,7 @@ namespace TestApp
                         Console.WriteLine("2. Load Character");
                         Console.WriteLine("3. Exit");
                         Console.WriteLine("4. Show character");
+                        Console.WriteLine("5. Save character");
                         Console.WriteLine("");
                         response = Console.ReadLine();
                         if (response == "1")
@@ -70,6 +71,14 @@ namespace TestApp
                         else if (response == "4")
                         {
                             currentAction = "Show";
+                        }
+                        else if (response == "5")
+                        {
+                            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "SaveCharacterTest.txt")))
+                            {
+                                await outputFile.WriteLineAsync("This is the save file for character: " + currentCharacter.name);
+                            }
                         }
                         else
                         {
@@ -113,24 +122,46 @@ namespace TestApp
                     }
                     Console.WriteLine("+----------------------------------------------+");
                     iteration = 0;
-                    writeThis = "";
+                    int foreachLength = currentCharacter.skills.Count;
+                    int totalIterations = 1;
+                    string finalResult = "";
                     foreach (KeyValuePair<string, int> skill in currentCharacter.skills)
                     {
-                        if (iteration == 0)
+                        if (totalIterations == foreachLength)
                         {
-                            writeThis = "| " + skill.Key + ": " + ReturnDiceValue(skill.Value + currentCharacter.attributes["Agility"]);
-                            iteration++;
+                            if (iteration == 0)
+                            {
+                                finalResult = "| " + skill.Key + ": " + skill.Value;
+                                Console.WriteLine(finalResult);
+                            }
+                            else
+                            {
+                                finalResult += " | " + skill.Key + ": " + skill.Value;
+                                Console.WriteLine(finalResult);
+                            }
                         }
-                        else if (iteration == 1)
+                        else
                         {
-                            writeThis += " | " + skill.Key + ": " + ReturnDiceValue(skill.Value + currentCharacter.attributes["Agility"]);
-                            iteration++;
-                        }
-                        else if (iteration == 2)
-                        {
-                            writeThis += " | " + skill.Key + ": " + ReturnDiceValue(skill.Value + currentCharacter.attributes["Agility"]);
-                            Console.WriteLine(writeThis);
-                            iteration = 0;
+                            if (iteration == 0)
+                            {
+                                Console.WriteLine("");
+                                finalResult = "| " + skill.Key + ": " + skill.Value;
+                                iteration++;
+                                totalIterations++;
+                            }
+                            else if (iteration == 1)
+                            {
+                                finalResult += " | " + skill.Key + ": " + skill.Value;
+                                iteration++;
+                                totalIterations++;
+                            }
+                            else
+                            {
+                                finalResult += " | " + skill.Key + ": " + skill.Value;
+                                Console.WriteLine(finalResult);
+                                iteration = 0;
+                                totalIterations++;
+                            }
                         }
                     }
                     Console.WriteLine("+----------------------------------------------+");
@@ -226,25 +257,47 @@ namespace TestApp
                         {
                             Console.WriteLine("+----------------------------------------------+");
                             iteration = 0;
-                            string finalResult = "";
+                            foreachLength = currentCharacter.skills.Count;
+                            totalIterations = 1;
+                            finalResult = "";
                             foreach (KeyValuePair<string, int> skill in currentCharacter.skills)
                             {
-                                if (iteration == 0)
+                                if(totalIterations == foreachLength)
                                 {
-                                    Console.WriteLine("");
-                                    finalResult = "| " + skill.Key + ": " + skill.Value;
-                                    iteration++;
-                                }
-                                else if (iteration == 1)
-                                {
-                                    finalResult += " | " + skill.Key + ": " + skill.Value;
-                                    iteration++;
+                                    if(iteration == 0)
+                                    {
+                                        Console.WriteLine("");
+                                        finalResult = "| " + skill.Key + ": " + skill.Value;
+                                        Console.WriteLine(finalResult);
+                                    }
+                                    else
+                                    {
+                                        finalResult += " | " + skill.Key + ": " + skill.Value;
+                                        Console.WriteLine(finalResult);
+                                    }
                                 }
                                 else
                                 {
-                                    finalResult += " | " + skill.Key + ": " + skill.Value;
-                                    Console.WriteLine(finalResult);
-                                    iteration = 0;
+                                    if (iteration == 0)
+                                    {
+                                        Console.WriteLine("");
+                                        finalResult = "| " + skill.Key + ": " + skill.Value;
+                                        iteration++;
+                                        totalIterations++;
+                                    }
+                                    else if (iteration == 1)
+                                    {
+                                        finalResult += " | " + skill.Key + ": " + skill.Value;
+                                        iteration++;
+                                        totalIterations++;
+                                    }
+                                    else
+                                    {
+                                        finalResult += " | " + skill.Key + ": " + skill.Value;
+                                        Console.WriteLine(finalResult);
+                                        iteration = 0;
+                                        totalIterations++;
+                                    }
                                 }
                             }
                             Console.WriteLine("+----------------------------------------------+");
